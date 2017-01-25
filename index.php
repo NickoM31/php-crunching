@@ -6,14 +6,15 @@
 </head>
 <body>
 
-<h1>Dictionnaire</h1>
+	<h1>Dictionnaire</h1>
+
+	<h2>Nombre de mots dans le dictionnaire:</h2>
 	<?php 
 	$string = file_get_contents("dictionnaire.txt", FILE_USE_INCLUDE_PATH);
 	$dico = explode("\n", $string);
-// print_r ($dico);
-// print_r(sizeof($dico));
+	print_r(sizeof($dico));
 	?>
-	<!-- Nombre de mots avec 15 caractères -->
+	<h2>Nombre de mots avec 15 caractères:</h2>
 	<?php 
 	$tabWord = array();
 	foreach ($dico as $word) {
@@ -23,7 +24,7 @@
 	}
 	echo count($tabWord);
 	?> 
-	<!-- Nombre de mots qui contiennent la lettre w -->
+	<h2>Nombre de mots qui contiennent la lettre w:</h2>
 
 	<?php 
 	$tabWord = array();
@@ -35,7 +36,7 @@
 	echo count($tabWord);
 	?> 
 
-	<!-- Combien de mots finissent par la lettre q -->
+	<h2>Combien de mots finissent par la lettre q:</h2> 
 	<?php   
 	$tabWord = array();
 	foreach ($dico as $letter) {

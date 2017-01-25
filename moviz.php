@@ -11,15 +11,35 @@
 	$top = $brut["feed"]["entry"];
 
 	?>
-
+	<h1>Top 10</h1>
 	<?php 
 	
 	foreach ($top as $key => $value) {
 		if ($key<=10) {
 
-			 echo "<ul>"."<li>".($value['im:name']['label']). "</li>"."</ul>";
+			echo $key. " ".$value['im:name']['label']."</br>";
 		}
 	}
 	?>
+	<h1>Classement du film « Gravity »</h1>
+	<?php 
+	foreach ($top as $key => $value) {
+		if ($value['im:name']['label'] == "Gravity") {
+		echo $key;
+		}
+		
+	}
+	?>
+	<h2>Le réalisateur du film « The LEGO Movie »:</h2>
+
+	<?php 
+foreach ($top as $key => $value) {
+	if ($value['im:name']['label'] == "The LEGO Movie") {
+		echo $value['im:artist']['label'];
+	}
+}
+
+
+	 ?>
 </body>
 </html>
