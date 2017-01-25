@@ -20,19 +20,28 @@
 		}
 	}
 	echo count($tabWord);
-	?>
+	?> 
 	<!-- Nombre de mots qui contiennent la lettre w -->
 
 	<?php 
 	$tabWord = array();
-// $wLetter = stripos($dico, 'w');
 	foreach ($dico as $letter) {
 		if (stripos($letter, 'w') !== false) {
 			array_push($tabWord, $letter);
 		}
 	}
 	echo count($tabWord);
-	?>
+	?> 
 
+	<!-- Combien de mots finissent par la lettre q -->
+	<?php   
+	$tabWord = array();
+	foreach ($dico as $letter) {
+		if (substr($letter, -1) == 'q') {
+			array_push($tabWord, $letter);
+		}
+	}
+	echo count($tabWord);
+	?> 
 </body>
 </html>
